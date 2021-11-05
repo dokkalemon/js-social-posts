@@ -30,7 +30,7 @@ const posts = [
         avatar: 'https://unsplash.it/300/300?image=15',
         date: `5 mesi fa`,
         text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-        image: 'https://picsum.photos/600/300',
+        image: 'https://picsum.photos/id/237/600/300',
         likes: `120`,
     },
     {
@@ -38,7 +38,7 @@ const posts = [
         avatar: 'https://unsplash.it/300/300?image=15',
         date: `7 mesi fa`,
         text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-        image: 'https://picsum.photos/600/300',
+        image: 'https://picsum.photos/id/1/600/300',
         likes: `103`,
     },
     {
@@ -46,7 +46,7 @@ const posts = [
         avatar: 'https://unsplash.it/300/300?image=15',
         date: `10 mesi fa`,
         text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-        image: 'https://picsum.photos/600/300',
+        image: 'https://picsum.photos/id/10/600/300',
         likes: `142`,
     },
     {
@@ -54,7 +54,7 @@ const posts = [
         avatar: 'https://unsplash.it/300/300?image=15',
         date: `1 anno fa`,
         text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-        image: 'https://picsum.photos/600/300',
+        image: 'https://picsum.photos/id/20/600/300',
         likes: `97`,
     },
 ]
@@ -93,12 +93,12 @@ function genPost(posts, i) {
     postHeader.classList.add('post__header');
     post.append(postHeader)
 
+    /* ---- generiamo l'header ----*/
     //generiamo il contenitore dei meta data
     const postMeta = document.createElement('div');
     postMeta.classList.add('post-meta');
     postHeader.append(postMeta)
 
-    /* ---- generiamo l'icona ----*/
     //Creiamo gli elementi
     const postMetaIcon = document.createElement('div');
     const postMetaImg = document.createElement('img');
@@ -131,6 +131,68 @@ function genPost(posts, i) {
     postMetaData.classList.add('post-meta__time');
     postMetaData.innerHTML += posts[i].date;
     postMetaAutor.append(postMetaData)
+
+
+    /* generiamo il testo del post */
+    const postText = document.createElement('div')
+    postText.classList.add('post__text')
+    postText.innerHTML = posts[i].text
+    post.append(postText)
+
+
+    /* Generiamo l'immagine del post */
+    const postImage = document.createElement('div')
+    postImage.classList.add('post__image');
+    post.append(postImage);
+
+    const postImgTag = document.createElement('img');
+    const postImgTagSrc = postImgTag.src = posts[i].image;
+    postImage.append(postImgTag)
+
+
+    /* generiamo il footer del post */
+    const postFooter = document.createElement('div');
+    postFooter.classList.add('post__footer');
+    post.append(postFooter)
+
+    //generiamo il conteiner del bottone like e del numero like
+    const postLikeCont = document.createElement('div');
+    postLikeCont.classList.add('likes', 'js-likes');
+    postFooter.append(postLikeCont);
+
+    //generiamo il bottone like  
+    const postBtnCont = document.createElement('div');
+    const postBtnLink = document.createElement('a');
+    const postBtnIcon = document.createElement('i');
+    const postBtnText = document.createElement('span')
+
+    postBtnCont.classList.add('likes__cta');
+    postBtnLink.classList.add('like-button', 'js-like-button');
+    postBtnIcon.classList.add('like-button__icon', 'fas', 'fa-thumbs-up')
+    postBtnText.classList.add('like-button__label');
+    postBtnText.innerHTML = ' Mi Piace';
+
+
+    postLikeCont.append(postBtnCont);
+    postBtnCont.append(postBtnLink);
+    postBtnLink.append(postBtnIcon, postBtnText);
+
+    //generiamo il counter dei like
+    const postCounterCont = document.createElement('div');
+    postCounterCont.classList.add('likes__counter');
+    postLikeCont.append(postCounterCont);
+
+    //creiamo il testo bold
+    const postCounterBold = document.createElement('b');
+    postCounterBold.classList.add('js-likes-counter');
+
+    postCounterBold.innerHTML = `${posts[i].likes}`
+
+    
+
+    //generiamo il testo
+    postCounterCont.innerHTML = `Piace a ${postCounterBold} persone`
+
 
 
 
