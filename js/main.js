@@ -22,6 +22,7 @@ const posts = [
         avatar: 'https://unsplash.it/300/300?image=15',
         date: `4 mesi fa`,
         text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
+        image: 'https://unsplash.it/600/300?image=171',
         likes: `80`,
     },
     {
@@ -29,6 +30,7 @@ const posts = [
         avatar: 'https://unsplash.it/300/300?image=15',
         date: `5 mesi fa`,
         text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
+        image: 'https://picsum.photos/600/300',
         likes: `120`,
     },
     {
@@ -36,6 +38,7 @@ const posts = [
         avatar: 'https://unsplash.it/300/300?image=15',
         date: `7 mesi fa`,
         text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
+        image: 'https://picsum.photos/600/300',
         likes: `103`,
     },
     {
@@ -43,6 +46,7 @@ const posts = [
         avatar: 'https://unsplash.it/300/300?image=15',
         date: `10 mesi fa`,
         text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
+        image: 'https://picsum.photos/600/300',
         likes: `142`,
     },
     {
@@ -50,6 +54,7 @@ const posts = [
         avatar: 'https://unsplash.it/300/300?image=15',
         date: `1 anno fa`,
         text: 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
+        image: 'https://picsum.photos/600/300',
         likes: `97`,
     },
 ]
