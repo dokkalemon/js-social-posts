@@ -59,7 +59,7 @@ const posts = [
     },
 ]
 
-/* console.table(posts) */
+ console.table()
 
 
 
@@ -69,7 +69,7 @@ const postContainer = document.querySelector('.posts-list');
 //Loop per generare i post
 for (let i = 0; i < posts.length; i++) {
 
-    const posts = genPost(i);
+    const postsList = genPost(posts, i);
 
 }
 
@@ -82,7 +82,7 @@ for (let i = 0; i < posts.length; i++) {
 
 /* FUNCTION */
 //Generiamo il post
-function genPost(i) {
+function genPost(posts, i) {
     //Generiamo il contenitore del post
     const post = document.createElement('div');
     post.classList.add('post');
@@ -98,7 +98,7 @@ function genPost(i) {
     postMeta.classList.add('post-meta');
     postHeader.append(postMeta)
 
-    //generiamo l'icona
+    /* ---- generiamo l'icona ----*/
     //Creiamo gli elementi
     const postMetaIcon = document.createElement('div');
     const postMetaImg = document.createElement('img');
@@ -114,11 +114,23 @@ function genPost(i) {
     postMeta.append(postMetaIcon)
     postMetaIcon.append(postMetaImg)
 
-    
 
-    
+    //generiamo il conteiner per il nome e la data
+    const postMetaAutor = document.createElement('div');
+    postMetaAutor.classList.add('post-meta__data');
+    postMeta.append(postMetaAutor)
 
+    //generiamo il conteiner e aggiungiamo il nome
+    const postMetaName = document.createElement('div');
+    postMetaName.classList.add('post-meta__author');
+    postMetaName.innerHTML += posts[i].author
+    postMetaAutor.append(postMetaName);
 
+    //generiamo il conteiner e aggiungiamo la data
+    const postMetaData = document.createElement('div');
+    postMetaData.classList.add('post-meta__time');
+    postMetaData.innerHTML += posts[i].date;
+    postMetaAutor.append(postMetaData)
 
 
 
