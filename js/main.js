@@ -59,10 +59,70 @@ const posts = [
     },
 ]
 
-console.table(posts)
+/* console.table(posts) */
 
 
 
 //Referenza del conteiner dei post
-const postContainer = document.querySelector('post');
+const postContainer = document.querySelector('.posts-list');
+
+//Loop per generare i post
+for (let i = 0; i < posts.length; i++) {
+
+    const posts = genPost(i);
+
+}
+
+
+
+
+
+
+
+
+/* FUNCTION */
+//Generiamo il post
+function genPost(i) {
+    //Generiamo il contenitore del post
+    const post = document.createElement('div');
+    post.classList.add('post');
+    postContainer.append(post);
+
+    //generiamo l'header del post
+    const postHeader = document.createElement('div');
+    postHeader.classList.add('post__header');
+    post.append(postHeader)
+
+    //generiamo il contenitore dei meta data
+    const postMeta = document.createElement('div');
+    postMeta.classList.add('post-meta');
+    postHeader.append(postMeta)
+
+    //generiamo l'icona
+    //Creiamo gli elementi
+    const postMetaIcon = document.createElement('div');
+    const postMetaImg = document.createElement('img');
+
+    //Aggiungiamo una classe
+    postMetaIcon.classList.add('post-meta__icon');
+    postMetaImg.classList.add('profile-pic');
+
+    //aggiungiamo il src all'imagine
+    const postMetaImgSrc = postMetaImg.src = `https://unsplash.it/300/300?image=1${i}`
+
+    //Inseriamo conteiner icona e immagine icona nell'HTML
+    postMeta.append(postMetaIcon)
+    postMetaIcon.append(postMetaImg)
+
+    
+
+    
+
+
+
+
+
+    return post
+}
+
 
