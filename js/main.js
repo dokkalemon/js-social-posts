@@ -63,7 +63,6 @@ console.table(posts)
 
 
 
-
-
-
+//Referenza del conteiner dei post
+const postContainer = document.querySelector('post');
 
